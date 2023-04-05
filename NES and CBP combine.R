@@ -80,7 +80,7 @@ DFfilled$years <- as.numeric(as.character(DFfilled$years))
 
 ##########################################################
 
-using <- left_join(CBP,NES)
+using <- left_join(NES,CBP)
 rm(NES,CBP)
 using <- using %>% mutate(four_digit_naics = if_else(between(as.numeric(naics),1000,9999),1,0),
                           three_digit_naics = if_else(between(as.numeric(naics),100,999),1,0),
